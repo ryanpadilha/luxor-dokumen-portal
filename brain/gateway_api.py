@@ -17,7 +17,7 @@ def create_app(mode):
         path.abspath(path.dirname(__file__)), "%s_instance" % mode
     )
 
-    app = Flask('wtf',
+    app = Flask('brain',
                 instance_path=instance_path,
                 instance_relative_config=True)
 
@@ -25,7 +25,7 @@ def create_app(mode):
     # app.config.from_object(__name__)
 
     # read constants from module, absolute path
-    app.config.from_object('wtf.default_settings')
+    app.config.from_object('brain.default_settings')
 
     # read constants from system-environment
     # app.config.from_envvar(config_env_var, silent=False)
