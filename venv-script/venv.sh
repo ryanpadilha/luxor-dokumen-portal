@@ -13,6 +13,9 @@ cd $(dirname $0) && cd ..
 to_console "creating a python virtual environment (venv) on folder 'venv-sandbox'"
 python3 -m venv venv-sandbox
 
+# in case of error on above statement run:
+# python3 -m virtualenv venv-sandbox
+
 to_console "activate virtual environment sandbox"
 source venv-sandbox/bin/activate
 
@@ -21,3 +24,7 @@ pip install --upgrade pip
 
 to_console "checking and installing dependencies with pip"
 pip install -r venv-script/requirements.txt
+
+# if requirements.txt has the line 'pkg-resources==0.0.0'
+# the source of it is a related bug in 'pip freeze' command, remove it
+# reference: https://github.com/pypa/pip/issues/4022
