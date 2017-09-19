@@ -4,7 +4,7 @@ import os
 
 DEBUG = False
 USE_RELOADER = False
-HOST = 'localhost'
+HOST = '0.0.0.0'
 RUN_PORT = int(os.environ.get('PORT', 5000))
 
 WTF_CSRF_ENABLED = True
