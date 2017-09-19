@@ -2,7 +2,9 @@
 
 # entry point for the application based on WSGI
 
-from run import application
+from brain.gateway_api import create_app
+
+application = create_app(mode='null')
 
 if __name__ == '__main__':
     application.run()
