@@ -2,7 +2,9 @@
 
 # entry point for the application based on WSGI
 
-from run import application
+import sys
+from brain.gateway_api import create_app
 
-if __name__ == '__main__':
-    application.run()
+mode = 'production'
+application = create_app(mode=mode)
+application.run(**application.config.get_namespace('RUN_'))
